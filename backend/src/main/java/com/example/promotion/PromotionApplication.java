@@ -24,23 +24,6 @@ public class PromotionApplication {
 		SpringApplication.run(PromotionApplication.class, args);
 	}
 
-	@Bean
-	InitializingBean sendDatabase() {
-		return () -> {
-
-			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-			String firstName = "admin";
-			String lastName = "admin";
-			String email = "admin@admin.com";
-			String password = passwordEncoder.encode("4G2wR%u96yYzhmGs");
-			String role = "ADMIN";
-
-			User u = new User(firstName,  lastName, email, password);
-			u.addRole(role);
-			userRepository.save(u);
-
-		};
-	}
 
 }
 
