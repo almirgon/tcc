@@ -1,0 +1,35 @@
+<section class="home animate__animated animate__fadeIn">
+  <div class="list" *ngIf="pendingsPromotions?.length > 0">
+    <div class="board" *ngFor="let promotion of pendingsPromotions">
+      <div (click)="redirectTo(promotion.id)" class="card-info">
+      <div class="my-price">
+          <p>{{promotion.price | currency:'BRL':true}}</p>
+      </div>
+        <div class="info-board">
+              <h3>{{promotion.name}}</h3>
+              <div class="person">
+                <div class="data">
+                    <p>Enviado por {{promotion.user.firstName}}</p>
+                    <p>{{promotion.date | dateAgo}}</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="dock">
+        <div class="my-local">
+          <button (click)="goToWebSite(promotion.urlLink)" class="btn">Verificar Promoção</button>
+      </div>
+        </div>
+    </div>
+  </div>
+  <div class="list" *ngIf="pendingsPromotions?.length  === 0 && loading === false">
+    <div class="noPromotion">
+      <h1 id="my-h1">Sem Promoções Pendentes</h1>
+    </div>
+  </div>
+  <div class="list" *ngIf="loading">
+    <loading></loading>
+  </div>
+</section>
+
+

@@ -1,0 +1,174 @@
+.homeAdmin {
+  padding: 5px 5px;
+}
+
+.listAdmin {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.boardAdmin {
+  padding: 10px;
+  user-select: none;
+}
+
+
+.cardInfoAdmin {
+  position: relative;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  min-height: 160px;
+  padding: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 2px 6px 2px rgba(60,64,67,0.149);
+}
+
+.boardAdmin{
+  transition: all 0.25s;
+}
+
+.boardAdmin:hover{
+  transform: scale(1.025);
+}
+
+.infoBoardAdmin{
+  width: 300px;
+  min-width: 100%;
+  height: 70px;
+  text-align: center;
+}
+
+
+.infoBoardAdmin h3{
+  word-break: break-all;
+  font-size: 20px;
+  margin-bottom: 0px;
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+  color: #666666;
+ 
+}
+
+.infoBoardAdmin h3:hover{
+  text-decoration: underline;
+}
+
+.infoBoardAdmin p{
+  font-size: 15px;
+  color: gray;
+  margin-bottom: 0px;
+  max-width: 100%;
+  max-height: 100%;
+ 
+}
+
+.myPriceAdmin{
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: auto;
+  bottom: 1em;
+  right: 0;
+  width: 40%;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 0.2px 2.5px 0 rgba(60,64,67,0.302),0 1px 1.5px 0.5px rgba(60,64,67,0.149);
+  background-color: aliceblue;
+}
+.myPriceAdmin p{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 2px;
+  color: #5ED3F3;
+  font-weight: 600;
+}
+
+
+.dockAdmin {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 2px 6px 2px rgba(60,64,67,0.149);
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #b4e1ed;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.myLocalAdmin{
+  margin: 0 auto;
+}
+
+.personAdmin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.dataAdmin{
+  margin-left: 0.3rem;
+
+}
+
+.dataAdmin p:nth-child(1){
+  color: #666666;;
+}
+
+.dataAdmin p:nth-child(2){
+  font-size: 12px;
+  color: #666666;
+  
+}
+
+#my-h1{
+  text-align: center;
+  font-size: 2rem;
+  color: #ED9292;
+}
+
+
+@media screen and (max-width: 700px) {
+  .boardAdmin {
+    width: 100%;
+  }
+  .cardInfoAdmin{
+    min-height: 130px;
+    padding: 0.5rem;
+    display: flex;
+  }
+ 
+  .infoBoardAdmin{
+    width: 100%;
+    min-width: inherit;
+    margin-top: 30px;
+    
+  }
+
+  .infoBoardAdmin h3{
+    font-size: 16px;
+  }
+
+  .dataAdmin p:nth-child(1){
+    font-size: 12px;
+    
+    font-weight: 500;
+  }
+
+  .dockAdmin{
+    padding: 0.5rem;
+  }
+
+  .people p{
+    display: none;
+  }
+
+  .myPriceAdmin{
+    top: 0;
+    bottom: auto;
+  }
+  
+}
+

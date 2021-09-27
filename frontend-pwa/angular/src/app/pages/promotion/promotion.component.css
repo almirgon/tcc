@@ -1,0 +1,170 @@
+.my-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  max-height: 400px;
+  padding: 1rem;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.my-price{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+  border-radius: 4px;
+  box-shadow: 0 0.2px 2.5px 0 rgb(60 64 67 / 30%), 0 1px 1.5px 0.5px rgb(60 64 67 / 15%);
+  background-color: #F4E6E6;
+}
+.my-price p{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 2px;
+  color: #ED9292;
+  font-weight: 600;
+}
+
+.my-info{
+  width: 100%;
+  min-width: 100%;
+  padding: 10px;
+}
+
+
+.my-info h3{
+  word-break: break-all;
+  font-size: 20px;
+  margin-bottom: 0px;
+  max-width: 100%;
+  max-height: 100%;
+  user-select: none;
+  color: #666666;
+ 
+}
+
+.my-local p{
+  font-weight: 200;
+}
+
+.my-info h3:hover{
+  text-decoration: underline;
+}
+
+.my-info p{
+  font-size: 15px;
+  color: gray;
+  margin-bottom: 0px;
+  max-width: 100%;
+  max-height: 100%;
+ 
+}
+
+.like{
+  margin-right: 1rem;
+}
+
+.description{
+  width: 100%;
+  font-size: 15px;
+  margin-top: 0.3rem;
+  user-select: none;
+  color: #666666;
+}
+
+.person{
+  display: flex;
+  align-items: center;
+}
+
+.data{
+  margin-left: 0.3rem;
+
+}
+
+.my-buttons{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.my-cupom{
+  display: block;
+  padding: 10px 10px;
+  background: #F4E6E6;
+  border-radius: 4px;
+  color: #ED9292;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgb(30 60 90 / 20%);
+  transition: all 0.3s;
+}
+
+.person{
+  background: #ED9292;
+  padding: 5px;
+  color: white;
+}
+
+back{
+  display: none;
+}
+
+.myLoading{
+  justify-content: center;
+  display: flex;
+}
+
+.promotion-section{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 89vh;
+}
+
+@media screen and (max-width: 700px) {
+  .my-img{
+    width: auto;
+    max-height: 500px;
+  }
+
+  back{
+    display: flex;
+  }
+  
+  .my-info{
+    width: 100%;
+    min-width: inherit;
+  }
+
+  .my-info h3{
+    font-size: 18px;
+  }
+
+  .my-price{
+    bottom: 22em;
+    user-select: none;
+  }
+
+  .promotion{
+    min-height: 91vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .promotion-section{
+    width: 100%;
+    display: block;
+    margin: 0;
+  }
+}

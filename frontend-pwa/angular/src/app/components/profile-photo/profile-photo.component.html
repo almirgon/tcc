@@ -1,0 +1,17 @@
+<div class="profile-photo">
+  <form action="" class="my-form">
+    <h1>Foto do item</h1>
+    <p>Publique foto apenas com fundo branco</p>
+    <input type="text" name="name">
+    <div class="my-btns">
+      <button (click)="noPhoto()" class="btn">Não Aprovar</button>
+      <button (click)="endItUp()" class="btn">Aprovar</button>
+    </div>
+  </form>
+</div>
+
+
+
+<div class="loading" *ngIf="loading">
+  <loading></loading>
+</div>

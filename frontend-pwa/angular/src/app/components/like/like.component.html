@@ -1,0 +1,6 @@
+<div class="my-like">
+  <span [ngStyle]="{'cursor' : userLogged ? 'pointer' : 'auto'}" (click)="userLogged && likedIt()" class="material-icons-outlined">
+      favorite
+      </span>
+      <p>{{numberLikes}}</p>
+</div>

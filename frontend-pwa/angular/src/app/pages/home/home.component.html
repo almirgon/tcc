@@ -1,0 +1,39 @@
+<section class="home animate__animated animate__fadeIn">
+    <div class="list" *ngIf="promotions?.length > 0">
+      <div class="my-promotion" *ngFor="let promotion of promotions; let i = index">
+        <div class="card-info">
+            <like [likes]="promotion.numberLikes" class="like" [promotionID]="promotion.id" (update)="likePromotion($event, i)"></like>
+        <div (click)="redirectTo(promotion)" class="my-img">
+            <img [src]=promotion.photo alt="card-img">
+        </div>
+        <div class="my-price">
+            <p>{{promotion.price | currency:'BRL':true}}</p>
+        </div>
+          <div class="my-info">
+                <h3 (click)="redirectTo(promotion)">{{promotion.name}}</h3>
+                <div class="my-local">
+                    <p>Vendido por {{promotion.soldBy}}</p>
+                    <button (click)=goToWebSite(promotion.urlLink) class="my-link">Link</button>
+                </div>
+          </div>
+        </div>
+        <div class="dock">
+            <div class="person">
+                <ngx-avatar bgColor="#F4E6E6" fgColor="#ED9292" class="my-avatar"[name]="promotion.user.firstName" size="32"> </ngx-avatar>
+                <div class="data">
+                    <p>Postado por {{promotion.user.firstName}}</p>
+                    <p>{{promotion.date | dateAgo}}</p>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="list" *ngIf="promotions?.length  === 0 && !loading">
+        <div class="noPromotion">
+            <h1>Sem Promoções publicadas :(</h1>
+        </div>
+      </div>
+    <div class="list" *ngIf="loading">
+        <loading></loading>
+    </div>
+  </section>

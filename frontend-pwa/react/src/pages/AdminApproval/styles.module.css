@@ -1,0 +1,30 @@
+.approveRoom{
+  display: flex;
+  width: 100%;
+}
+
+input{
+  margin-bottom: 1rem;
+}
+
+
+.myLoading{
+  margin: 0 auto;
+}
+
+.myButtons{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 700px){
+  
+  .approveRoom{
+    display: block;
+  }
+
+  .intro{
+    width: 100%;
+  }
+}

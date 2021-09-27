@@ -1,0 +1,30 @@
+<header class="myHeader">
+  <div>
+    <img class="myLogo" src="../../../assets/logo.svg" alt="promotion-logo">
+  </div>
+  <div class="buttons" *ngIf="logged && admin">
+    <button id="span-btn" (click)="goToHome()" class=" mobile"><span class="material-icons-outlined">
+      cottage
+      </span></button>
+    <button id="span-btn" (click)="approvePromotion()" class=" mobile"><span class="material-icons-outlined">
+      task_alt
+      </span></button>
+    <button (click)="logOut()" class=" mobile"><span class="material-icons-outlined">
+      logout
+      </span></button>
+  </div>
+  <div class="buttons" *ngIf="logged && !admin">
+    <button id="span-btn" (click)="goToHome()" class=" mobile"><span class="material-icons-outlined">
+      cottage
+      </span></button>
+    <button id="span-btn" (click)="addPromotion()" class=" mobile"><span class="material-icons-outlined">
+      add
+      </span></button>
+    <button (click)="logOut()" class=" mobile"><span class="material-icons-outlined">
+      logout
+      </span></button>
+  </div>
+  <div *ngIf="!logged && !admin">
+    <button (click)="goToLogin()" class="btn">Login</button>
+  </div>
+</header>

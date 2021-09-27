@@ -1,0 +1,31 @@
+.myHeader{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eaecef;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(30, 60, 90, 0.1);
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #5ED3F3;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
+}
+#span-btn{
+  border-right: 1px solid #CECECE;
+
+}
+.myLogo{
+  max-width: 80%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px){
+  .myLogo{
+    max-width: 100%;
+  }
+}

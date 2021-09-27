@@ -1,0 +1,43 @@
+<section class="approval-page animate__animated animate__fadeIn" >
+  <div class="approveRoom" *ngIf="promotion && approveRoom">
+    <back></back>
+    <div class="intro">
+      <img src="../../../assets/gifs/approve.gif" alt="promotion-approve" />
+    </div>
+    <div class="my-div" *ngIf="approveRoom">
+      <h1>Sala de Aprovação</h1>
+      <form [formGroup]="approvalPromotionForm" (submit)="onSubmit()" novalidate class="my-form">
+        <label for="name">Nome</label>
+        <input type="text" disabled value="{{promotion.name}}">
+        <label for="password">Descrição</label>
+        <textarea type="text" disabled value="{{promotion.description ? promotion.description : 'Sem descrição'}}" cols="30" rows="10"></textarea>
+        <label for="price">Preço</label>
+        <input type="number" disabled value="{{promotion.price}}">
+        <label for="link">Link</label>
+        <input type="text" disabled value="{{promotion.urlLink}}">
+        <label for="cupom">Cupom</label>
+        <input type="text" disabled value="{{promotion.voucher ? promotion.voucher : 'Sem cupom'}}">
+        <label for="soldBy">Vendido por</label>
+        <input type="text" formControlName="soldBy" [class.is-invalid]="isFormFieldInvalid('soldBy')" placeholder="Exemplo: Magalu">
+        <div class="messages">
+          <small class="text-danger" *ngIf="hasError('soldBy', 'required')">*Campo obrigatório</small>
+          <small class="text-danger" *ngIf="hasError('soldBy', 'minlength')">*Tamanho mínimo de 2 caracteres</small>
+          <small class="text-danger" *ngIf="hasError('soldBy', 'maxlength')">*Tamanho máximo de 20 caracteres</small>
+        </div>
+        <label for="photo">Foto do Item</label>
+        <input type="text" formControlName="photo" [class.is-invalid]="isFormFieldInvalid('photo')" placeholder="Copie o link da imagem e cole aqui">
+        <div class="messages">
+          <small class="text-danger" *ngIf="hasError('photo', 'required')">*Campo obrigatório</small>
+          <small class="text-danger" *ngIf="hasError('photo', 'minlength')">*Tamanho mínimo de 7 caracteres</small>
+        </div>
+        <div class="my-buttons">
+          <button class="btn" type="submit" [disabled]="!approvalPromotionForm.valid">Aprovar</button>
+        </div>
+      </form>
+      <button class="btn" (click)="noApprove()">Não Aprovar</button>
+    </div>
+  </div>
+  <div [ngStyle]="{'background' : loading ? 'none' : '#ED9292'}" class="my-loading" *ngIf="loading">
+    <loading></loading>
+  </div>
+</section>

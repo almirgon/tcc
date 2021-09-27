@@ -1,0 +1,58 @@
+.forgotPage {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+}
+.intro {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgot {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #5ED3F3;
+  background:aliceblue;
+  height: 100vh;
+}
+
+.forgotImg{
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title h2 {
+  color: #5ED3F3;
+  text-align: center;
+  
+}
+
+
+@media (max-width: 700px) {
+  .forgotPage {
+    flex-direction: column;
+    height: auto;
+  }
+  .intro {
+    width: 100%;
+  }
+  .forgot {
+    width: 100%;
+    margin-top: 0px;
+    height: 45vh;
+  }
+  img {
+    max-width: 500px;
+  }
+}

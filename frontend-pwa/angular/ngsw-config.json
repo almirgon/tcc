@@ -1,0 +1,45 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "Promotion",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.otf",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ], "dataGroups": [
+    {
+      "name": "promotion",
+      "urls": [
+        "/api/promotion/actives",
+        "/api/promotion/*"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 150,
+        "maxAge": "50m",
+        "timeout": "3s"
+      }
+    }
+  ]
+}

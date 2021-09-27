@@ -1,0 +1,36 @@
+<section class="promotion-section animate__animated animate__fadeIn">
+  <div class="promotion" *ngIf="myPage">
+    <back></back>
+    <like [likes]="promotion?.numberLikes" class="like" [promotionID]="promotion?.id" (update)="likePromotion($event)" class="like"></like>
+    <div class="my-img">
+      <img [src]=promotion?.photo alt="{{promotion?.name}}">
+    </div>
+    <div class="my-price">
+      <p>{{promotion?.price | currency:'BRL':true}}</p>
+  </div>
+  <div class="my-info">
+    <h3>{{promotion?.name}}</h3>
+    <div class="my-local">
+        <p>Vendido por {{promotion?.soldBy}}</p>
+    </div>
+    <div class="description">
+      <p>{{promotion?.description}}</p>
+    </div>
+  </div>
+  <div class="my-buttons">
+    <p [ngStyle]="{'display' : promotion?.voucher.length === 0 ? 'none' : 'flex'}" class="my-cupom">Cupom: {{promotion?.voucher}}</p>
+    <button [ngStyle]="{'margin' : promotion?.voucher.length === 0 ? '0 auto' : 'none'}" class="btn" (click)= "goToWebSite(promotion?.urlLink)">Acessar</button>
+  </div>
+  
+  <div class="person">
+    <ngx-avatar class="my-avatar" bgColor="#F4E6E6" fgColor="#ED9292" name={{promotion?.user.firstName}} size="40"> </ngx-avatar>
+    <div class="data">
+        <p>Postado por {{promotion?.user.firstName}}</p>
+        <p>{{promotion?.date | dateAgo}}</p>
+    </div>
+  </div>
+  </div>
+<div class="myLoading" *ngIf="loading"> 
+  <loading ></loading>
+</div>
+</section>

@@ -1,0 +1,44 @@
+<section class="share-page animate__animated animate__fadeIn">
+  <back></back>
+  <div class="intro">
+    <img src="../../../assets/gifs/share.gif" alt="promotion-share" />
+  </div>
+  <div class="my-div" *ngIf="register">
+    <h1>Compartilhe uma promoção conosco :)</h1>
+    <form [formGroup]="sharePromotionForm" (submit)="onSubmit()" novalidate class="my-form">
+      <label for="name">Nome</label>
+      <input type="text"  formControlName="name" [class.is-invalid]="isFormFieldInvalid('name')">
+      <div class="messages">
+        <small class="text-danger" *ngIf="hasError('name', 'required')">*Campo obrigatório</small>
+        <small class="text-danger" *ngIf="hasError('name', 'minlength')">*Tamanho mínimo de 5 caracteres</small>
+        <small class="text-danger" *ngIf="hasError('name', 'maxlength')">*Tamanho mínimo de 25 caracteres</small>
+      </div>
+      <label for="password">Descrição</label>
+      <textarea type="text" formControlName="description" [class.is-invalid]="isFormFieldInvalid('description')"  cols="30" rows="10"></textarea>
+      <div class="messages">
+        <small class="text-danger" *ngIf="hasError('description', 'minlength')">*Tamanho mínimo de 10 caracteres</small>
+        <small class="text-danger" *ngIf="hasError('description', 'maxlength')">*Tamanho máximo de 200 caracteres</small>
+      </div>
+      <label for="price">Preço</label>
+      <input type="number"  formControlName="price" [class.is-invalid]="isFormFieldInvalid('price')">
+      <div class="messages">
+        <small class="text-danger" *ngIf="hasError('price', 'required')">*Campo obrigatório</small>
+        <small class="text-danger" *ngIf="hasError('price', 'min')">*O Valor precisa ser maior que R$ 0</small>
+      </div>
+      <label for="urlLink">Link</label>
+      <input type="text"  formControlName="urlLink" [class.is-invalid]="isFormFieldInvalid('urlLink')">
+      <div class="messages">
+        <small class="text-danger" *ngIf="hasError('urlLink', 'required')">*Campo obrigatório</small>
+      </div>
+      <label for="voucher">Cupom</label>
+      <input type="text"  formControlName="voucher" [class.is-invalid]="isFormFieldInvalid('voucher')">
+      <div class="messages">
+        <small class="text-danger" *ngIf="hasError('voucher', 'minlength')">*Tamanho mínimo de 5 caracteres</small>
+      </div>
+      <button class="btn" type="submit" [disabled]="!sharePromotionForm.valid">Enviar</button>
+    </form>
+  </div>
+  <div [ngStyle]="{'background' : loading ? 'none' : '#ED9292'}" class="my-div" *ngIf="loading">
+    <loading></loading>
+  </div>
+</section>
